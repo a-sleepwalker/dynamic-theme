@@ -1,0 +1,7 @@
+ls:
+  ./{src,example}:
+    .js: kebab-case
+    .ts: kebab-case | camelCase
+    .tsx: camelCase | PascalCase
+    .d.ts: kebab-case | camelCase
+    .json: kebab-case

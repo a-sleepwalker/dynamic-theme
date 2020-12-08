@@ -1,0 +1,82 @@
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    commonjs: true,
+    es6: true,
+    es2017: true,
+    es2020: true,
+    jest: true,
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ['node', 'promise', '@typescript-eslint'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended'],
+  rules: {
+    semi: [2, 'always', {omitLastInOneLineBlock: true}],
+    camelcase: [2, {properties: 'never'}],
+    'object-curly-spacing': [2, 'never'],
+    // 'generator-star-spacing': 0,
+    'space-before-function-paren': [2, {
+      anonymous: 'always',
+      named: 'never',
+      asyncArrow: 'always',
+    }],
+    'max-len': [1, 150],
+    indent: 2,
+    'no-unused-vars': 1,
+    'no-console': 1,
+    // todo
+    'arrow-body-style': 0,
+    'object-curly-newline': 0,
+    'object-property-newline': [1, {allowAllPropertiesOnSameLine: true}],
+    'react/jsx-filename-extension': [1, {extensions: ['.js', 'jsx', '.ts', '.tsx']}],
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 1,
+    'no-unused-expressions': [
+      1,
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+      },
+    ],
+    'no-underscore-dangle': ['error', {allowAfterThis: true}],
+    'react/jsx-tag-spacing': 0,
+    'react/jsx-curly-newline': 0,
+    'react/state-in-constructor': 0,
+    'react/static-property-placement': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'react/button-has-type': 0,
+    '@typescript-eslint/indent': [2, 2],
+    '@typescript-eslint/ban-ts-ignore': 0,
+    '@typescript-eslint/explicit-member-accessibility': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
+  },
+  overrides: [
+    {
+      files: ['*.tsx'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 2,
+        'no-use-before-define': 0,
+      },
+    },
+    {
+      files: ['*.jsx'],
+      rules: {
+        'react/prop-types': 0,
+      },
+    },
+  ],
+};

@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "react-app",
+      {
+        "flow": false,
+        "typescript": true
+      }
+    ]
+  ],
+  "plugins": [
+    "macros",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}

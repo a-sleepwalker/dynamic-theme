@@ -1,0 +1,11 @@
+# Default
+node_modules
+
+
+# Custom
+/dist
+/config
+/webpack
+/public
+/scripts
+src/serviceWorker.js

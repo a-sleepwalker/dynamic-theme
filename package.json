@@ -1,0 +1,98 @@
+{
+  "name": "dynamic-theme",
+  "version": "1.0.0",
+  "description": "动态换肤",
+  "keywords": [
+    "dynamic-theme"
+  ],
+  "homepage": "https://github.com/a-sleepwalker/dynamic-theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-sleepwalker/dynamic-theme.git"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "index.d.ts",
+    "README.md"
+  ],
+  "types": "index.d.ts",
+  "author": "a-sleepwalker",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "ls-lint": "ls-lint",
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx src/ example/",
+    "commit": "git add . && git-cz",
+    "build": "webpack --config config/webpack.config.js --progress",
+    "example": "webpack-dev-server --config config/webpack.example.config.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+    "@ls-lint/ls-lint": "^1.9.2",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "babel-eslint": "10.0.2",
+    "babel-loader": "^8.2.1",
+    "babel-preset-react-app": "^9.0.1",
+    "commitizen": "^4.0.4",
+    "cz-emoji": "^1.3.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "~18.0.1",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^5.1.3",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "~10.0.0",
+    "eslint-plugin-promise": "~4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "1.0.0",
+    "css-loader": "2.1.1",
+    "resolve-url-loader": "3.1.0",
+    "stylus": "~0.54.7",
+    "stylus-loader": "~3.0.2",
+    "lint-staged": "^10.4.0",
+    "pnp-webpack-plugin": "^1.6.4",
+    "pug-html-loader": "^1.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "semver": "^7.3.2",
+    "standard-version": "^7.1.0",
+    "terser-webpack-plugin": "^3.0.3",
+    "ts-pnp": "^1.2.0",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*": [
+      "ls-lint"
+    ],
+    "*.{js,ts,jsx,tsx}": [
+      "yarn lint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-emoji"
+    }
+  },
+  "dependencies": {
+    "css-color-function": "^1.3.3"
+  }
+}
